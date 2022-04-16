@@ -1,0 +1,115 @@
+
+td {
+  max-width: 130px;
+}
+td input {
+  max-width: 100%;
+}
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background: rgba(156,246,246,0.3);
+}
+
+.title-bar {
+  background: rgba(63,51,77,1);
+  height: 60px;
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 270px;
+  background: rgba(63,51,77,1);
+}
+
+.space {
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.image {
+  display: table;
+  margin: auto;
+  height: 125px;
+}
+.tables {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+  align-items: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.right {
+  margin-left: 270px;
+}
+.table {
+  width: 90%;
+  height: 40px;
+
+
+
+  font-size: 24px;
+  font-family: Roboto Slab;
+  box-shadow: inset 5px 5px 4px rgba(63, 51, 77, 0.5);
+  border: none;
+
+}
+a.but {
+  width: 100%;
+  /*margin: auto;*/
+  text-align: center;
+}
+
+
+.table:hover {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+.place {
+  margin-top: 60px;
+  /*margin-top: auto;*/
+  /*margin-bottom: auto;*/
+  background-color: white;
+  border-radius: 5px;
+}
+.navbar{
+  min-width: 700px;
+  display: flex;
+  height: 30px;
+  background-color: #ff8484;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+.add-button {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  max-height: 75%;
+  overflow: auto;
+}
+.items2 {
+  display: flex;
+  justify-content: center;
+  max-height: 40%; /* TODO -  nie wiem czy dobra proporcja! */
+  overflow: auto;
+}

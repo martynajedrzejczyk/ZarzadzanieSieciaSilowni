@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="/static/css/main.css" rel="stylesheet" />
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="image"><img src="/static/pictures/battery_full_light.png"></div>
+        <div class="header-box"><span class="header">Logowanie</span></div>
+        <!-- <div class="write-login-box"><span class="v2_3">Login</span></div> -->
+        <div class="write-login-box">
+            <form action="" method="post">
+            <input class="write-in" type="text" placeholder="Silownia" name="gymname" value="{{
+          request.form.gymname }}">
+            <input class="write-in" type="password" placeholder="Hasło" name="password" value="{{
+          request.form.password }}">
+            <input class="btn" type="submit" value="Zaloguj">
+            </form>
+        </div>
+        <div class="data-set"><a>Login:admin Hasło:admin</a></div>
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </div>
+</body>
+
+</html>

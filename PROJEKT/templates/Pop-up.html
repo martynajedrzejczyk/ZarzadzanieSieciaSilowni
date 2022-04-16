@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/Pop-up.css">
+    <title>Pop-up</title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+    <div class="Pop-up">
+        <div class="title">Dodaj {{ title }}</div>
+        <div class="inputs">
+            <form method="post" class="inputs" id="form0">
+                {% for k in data %}
+                <tr>
+                    <input type="text" placeholder="{{ k }}" name="{{ loop.index0 }}" form="form0">
+{#                <input type="text" form="form{{ outer_loop.index0 }}" value="{{ cell }}" width="10px" name="{{ loop.index0 + 1}}"/>#}
+                </tr>
+                {% endfor %}
+            </form>
+        </div>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    <div class="button">
+        <input type="image"  src="/static/pictures/a-2.png" alt="Submit" form="form0" width="28px">
+        <a href="/wroc" ><img src="/static/pictures/goback-w.png"> </a>
+    </div>
+</div>
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6cc28d9bdc880017',m:'v0J6VUx46.I2N051E_XLatJdsdy.aVTaoHI0Xo48Ftc-1641950330-0-AUGZ4QUkwlPxgklhxHoJOSMFBzmo4u7hIs7f8tIChRK+KkO/9nX0xf2qgb4SyusumhA2TeXj8sWY6xR/KSIypWdhJ6YvGev2T1eKlpQvkmjCr6rMrbedcKPcNFz3zCwAHWGbSXgsCPIyI7OunurVyABccel8r2P6TiDR0I28mZgKhOt60B6jOTRFookOoAh3qQ==',s:[0x1724eee9bd,0x541f732178],}})();</script></body>
+</html>

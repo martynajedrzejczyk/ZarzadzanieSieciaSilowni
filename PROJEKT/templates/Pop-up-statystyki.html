@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+    <link href="/static/css/glowne-statystyki.css" rel="stylesheet" />
+    <title>Statystyki</title>
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="gymname"><header class="gymname2">{{ gymname }}</header></div>
+        <div class="image"><a class="p" href="/statystyki"><img src="/static/pictures/battery_full_light.png"></a></div>
+        <div class="tables">
+             <a class="but" href="/pracownicy"><button type="button" class="table">Pracownicy</button></a>
+             <a class="but" href="/klubowicze"><button type="button" class="table">Klubowicze</button></a>
+             <a class="but" href="/sprzet"><button type="button" class="table">Sprzęt i szafki</button></a>
+             <a class="but" href="/pomieszczenie"><button type="button" class="table">Pomieszczenia</button></a>
+             <a class="but" href="/plany_treningowe"><button type="button" class="table">Plany treningowe</button></a>
+             <a class="but" href="/grupy"><button type="button" class="table">Grupy</button></a>
+        </div>
+    </div>
+    <div class="right">
+              <div class="title-bar">
+            <header>Statystyki pracowników</header>
+             <div class="logout"><a href="/"><img src="/static/pictures/logout.png" alt="przycisk"></a></div>
+
+        </div>
+        <div class="space" style="display: flex;">
+        <div class="el">Ilość trenerów i trenerek: {{ tab[0] }}</div>
+        <div class="el">Ilość sprzątaczy i sprzątaczek: {{ tab[2] }}</div>
+        <div class="el">Ilość recepcjonistów i recepcjonistkek: {{ tab[1] }}</div>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

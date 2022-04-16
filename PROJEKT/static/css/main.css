@@ -1,0 +1,105 @@
+
+body {
+  background: rgba(156,246,246,0.8);
+  font-family: Roboto;
+}
+
+
+div.login-box {
+  display: flex;
+  flex-direction: column;
+
+  background: #3f334d;
+  border-radius: 10px;
+  box-shadow: 20px 20px 10px rgba(0.3, 0.3, 0.3, 0.25);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.image{
+  /* height: 200px; */
+  display: table;
+  /* width: 100%; */
+  /* margin: auto; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.header-box {
+  height: 120px;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+}
+.header {
+  color: rgba(255,255,255,1);
+  font-family: Roboto Slab;
+  font-weight: Regular;
+  font-size: 38px;
+}
+div.write-login-box form {
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  
+  border-radius: 10px;
+
+  margin-bottom: 30px;
+}
+/*div.write-login-box form {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+
+div.data-set {
+  margin: auto;
+  color: #fff
+}
+
+.write-in {
+  width: 80%;
+  height: 28%;
+  /* margin: 10px; */
+
+  /* color: rgba(63,51,77,1);  NIE DZIALA XD*/
+  border-radius: 10px;
+  border-style: none;
+  
+  box-shadow: inset 5px 5px 4px rgba(63, 51, 77, 0.5);
+  
+  
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+}
+
+.btn {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}
+.btn:hover{
+  box-shadow: inset 5px 5px 4px rgba(255, 132, 132, 0.3);
+}
+input.write-in:hover{
+  box-shadow: inset 5px 5px 4px rgba(255, 132, 132, 0.3);
+}
+p {
+  margin: auto;
+  font-size: 18px;
+  color: #FF8484;
+
+}
+/* input.write-in:focus{
+  box-shadow: 0 0 5pt 2pt #790000;
+  outline-width: 0px;
+} */
+

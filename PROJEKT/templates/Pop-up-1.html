@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/Pop-up.css">
+    <title>Dodaj {{ title }}</title>
+        <script src="/static/css/main.js" type="text/javascript"></script>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+    <div class="Pop-up">
+        <div class="title">Dodaj {{ title }}</div>
+        <div class="inputs">
+            <form method="post" class="inputs" id="form0">
+                {% for k in data[:-1] %}
+                <tr>
+                    <input type="text" placeholder="{{ k }}" name="{{ loop.index0 }}" form="form0">
+                </tr>
+                {% endfor %}
+                 <td>
+                 <label class="dodaj">{{ label }}</label>
+                                <select class="option" name="{{ ile - 1}}" id="etatyy">
+                                    {% for r in etaty %}
+                                        <option value={{ r }}>{{ r }}</option>
+                                    {% endfor %}
+                                </select>
+                </td>
+            </form>
+        </div>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    <div class="button">
+        <input type="image"  src="/static/pictures/a-2.png" alt="Submit" form="form0" width="28px">
+        <a href="/wroc" ><img src="/static/pictures/goback-w.png"> </a>
+    </div>
+</div>
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6cc28d886c880017',m:'rxKYnw8tk9NOskPDowbx3yYjUlRlD2K5ldAEAoPlPGg-1641950327-0-AWZ4tgfa9pXR3nYR3Z+AmFUSIq7UCSvDhp1hg53zCAVRkc90JoDgpTQY+dz3PsO8+TP4sGwcqrPHFJGV6/5FjtRN5uKOPxdSvlRkPciRxeEXrWkW+p9VQ+/KgV2IsXLeJG7nT/XM0QNg1tk7IEnIodjctxNgQPRJD/xlgzejQSijAbt1BVeHLHDTWh9ixWS/2Eqp+Y0Ir2ONSuGherQmvAU=',s:[0xa36fc72099,0x2314576b70],}})();</script></body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+    <link href="/static/css/glowne-1.css" rel="stylesheet" />
+    <title>Okno główne</title>
+</head>
+
+<body>
+
+    <div class="title-bar"></div>
+    <div class="container">
+    <div class="menu">
+        <div class="image"><img src="/static/pictures/battery_full_light.png"></div>
+        <div class="tables">
+            <!-- <div class="table"><span class="v5_26">Siłownie</span></div>
+             -->
+             <button type="button" class="table" id="silownieB" name="silownie">Siłownie</button>
+             <button type="button" class="table" id="pracownicyB" name="pracownicy">Pracownicy</button>
+             <button type="button" class="table" id="klubowiczeB">Klubowicze</button>
+             <button type="button" class="table" id="karnetyB">Karnety</button>
+             <button type="button" class="table" id="sprzetB">Sprzęt i szafki</button>
+             <button type="button" class="table" id="pomieszczeniaB">Pomieszczenia</button>
+             <button type="button" class="table" id="planyB">Plany treningowe</button>
+             <button type="button" class="table" id="grupyB">Grupy</button>
+        </div>
+    </div>
+    <div class="right">
+    <div class="place">
+    <div class="navbar">To jest navbar</div>
+    <div class="items">
+        <table>
+            <tr>
+                <th>Imie</th>
+                <th>Imie</th>
+                <th>Imie</th>
+                <th>Imie</th>
+                <th>Imie</th>
+                <th>Imie</th>
+            </tr>
+
+                {% for row in data %}
+                    <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+
+        </table>
+    </div>    <!-- items -->
+    </div>   <!-- place-->
+    </div>   <!-- right-->
+    </div>   <!-- container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('button#silownieB').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/silownie',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+
+
+</body>
+
+</html>

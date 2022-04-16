@@ -1,0 +1,70 @@
+body {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.Pop-up{
+    display: flex;
+    width: 25%;
+    height: 75%;
+    flex-direction: column;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+    background-color: rgb(63, 51, 77);
+}
+
+.option {
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dodaj {
+    color: white;
+}
+
+.title {
+    text-align: center;
+    height: 15%;
+    font-size: 28px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputs{
+    display: flex;
+    height: 75%;
+    /* width: 80%; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+input {
+    height: 30px;
+    border-radius: 10px;
+
+}
+/* input::placeholder{
+    color: blue;
+} */
+.button{
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    height: 30px;
+}
+/*img{*/
+/*    width: 80%;*/
+/*}*/
+.error {
+    color:white;
+    text-align: center;
+}

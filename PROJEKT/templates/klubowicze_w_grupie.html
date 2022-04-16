@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+    <link href="/static/css/glowne-12.css" rel="stylesheet" />
+    <title>Klubowicze</title>
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="gymname"><header class="gymname2">{{ gymname }}</header></div>
+        <div class="image"><a class="p" href="/statystyki"><img src="/static/pictures/battery_full_light.png"></a></div>
+        <div class="tables">
+             <a class="but" href="/pracownicy"><button type="button" class="table">Pracownicy</button></a>
+             <a class="but" href="/klubowicze"><button type="button" class="table">Klubowicze</button></a>
+             <a class="but" href="/sprzet"><button type="button" class="table">Sprzęt i szafki</button></a>
+             <a class="but" href="/pomieszczenie"><button type="button" class="table">Pomieszczenia</button></a>
+             <a class="but" href="/plany_treningowe"><button type="button" class="table">Plany treningowe</button></a>
+             <a class="but" href="/grupy"><button type="button" class="table">Grupy</button></a>
+        </div>
+    </div>
+    <div class="right">
+              <div class="title-bar">
+            <header>Klubowicze należący do grupy {{ id_grupy }}</header>
+             <div class="logout"><a href="/"><img src="/static/pictures/logout.png" alt="przycisk"></a></div>
+
+        </div>
+        <div class="space">
+        {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }}
+            {% endif %}
+            <div class="place">
+            <div class="navbar">
+            <label for="sortujpo">Wybierz filtr:</label>
+
+                 <form id="formularz_filtr" method="post" action="/czytajFiltr/klubowicze">
+                <select name="sortujpo" id="sortujpo">
+                {% for r in names %}
+                    <option value={{ r }}>{{ r }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" id="wartosc" name="wartosc" placeholder="Szukaj" >
+
+{#                <div class="add-button" form="formularz_filtr"><a class="p" href="/czytaj_filtr/pracownicy"><img src="/static/pictures/Filter.png"></a>  </div>#}
+                 <div class="add-button"><a class="p" href="/klubowicze"><img src="/static/pictures/Filter.png"></a></div>
+                </form>
+                <div class="add-button"><a class="p" href="/dodaj_klubowicze"><img src="/static/pictures/a.png"></a></div>
+            </div>
+            <div class="items">
+                <table>
+                    <tr>
+                        {% for r in names %}
+                            <td>{{ r }}</td>
+                        {% endfor %}
+                    </tr>
+
+                        {% for row in data %}
+                            <tr><form id="form{{ loop.index0 }}" method="post" action="" ></form>
+                            {% set outer_loop = loop %}
+
+                            <td>{{ row[0] }}</td><input type="hidden" form="form{{ outer_loop.index0 }}" value="{{ row[0] }}" width="10px" name="0"/>
+
+                            <td> <input type="text" form="form{{ outer_loop.index0 }}" value="{{ row[1] }}" width="10px" name="1"/></td>
+
+                            <td>{{ row[2] }}</td><input type="hidden" form="form{{ outer_loop.index0 }}" value="{{ row[2] }}" width="10px" name="2"/>
+                            <td> <input type="date" form="form{{ outer_loop.index0 }}" value="{{ row[3] }}" width="10px" name="3"/></td>
+                            <td> <input type="date" form="form{{ outer_loop.index0 }}" value="{{ row[4] }}" width="10px" name="4"/></td>
+                            <td> <input type="text" form="form{{ outer_loop.index0 }}" value="{{ row[5] }}" width="10px" name="5"/></td>
+
+                            <td class="click"><a href="/usun-klubowicz-grupa/{{ row[0] }}/{{ id_grupy }}"><img src="/static/pictures/smietnik.png" width="25"> </a></td>
+
+                            </tr>
+                        {% endfor %}
+
+                </table>
+            </div>    <!-- items -->
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
